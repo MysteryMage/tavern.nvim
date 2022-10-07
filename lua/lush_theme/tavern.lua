@@ -68,9 +68,9 @@ local theme = lush(function()
         -- MoreMsg      { }, -- |more-prompt|
         NonText      { fg = colors.base05.darken(30) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal       { bg = colors.base00, fg = colors.base05 }, -- Normal text
-        NormalFloat  { bg = Normal.bg.darken(10), fg = Normal.fg }, -- Normal text in floating windows.
+        NormalFloat  { bg = colors.base00.darken(10), fg = Normal.fg }, -- Normal text in floating windows.
         NormalNC     { Normal }, -- normal text in non-current windows
-        Pmenu        {  bg = Normal.bg.lighten(10), fg = Normal.fg }, -- Popup menu: Normal item.
+        Pmenu        {  bg = colors.base00.lighten(10), fg = Normal.fg }, -- Popup menu: Normal item.
         PmenuSel     { bg = CursorLine.bg.lighten(10), gui = 'bold' }, -- Popup menu: Selected item.
         PmenuSbar    { bg = colors.base02 }, -- Popup menu: Scrollbar.
         PmenuThumb   { bg = colors.base05 }, -- Popup menu: Thumb of the scrollbar.
