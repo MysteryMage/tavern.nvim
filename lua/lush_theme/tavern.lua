@@ -188,10 +188,10 @@ local theme = lush(function()
         -- See :h nvim-treesitter-highlights, some groups may not be listed, submit a PR fix to lush-template!
         --
         -- TSAttribute          { } , -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-        TSBoolean            { fg = colors.base09 } , -- Boolean literals: `True` and `False` in Python.
-        TSCharacter          { fg = colors.base0B } , -- Character literals: `'a'` in C.
-        TSCharacterSpecial   { fg = colors.base0C } , -- Special characters.
-        TSComment            { Comment } , -- Line comments and block comments.
+        -- TSBoolean            { } , -- Boolean literals: `True` and `False` in Python.
+        -- TSCharacter          { } , -- Character literals: `'a'` in C.
+        -- TSCharacterSpecial   { } , -- Special characters.
+        -- TSComment            { } , -- Line comments and block comments.
         -- TSConditional        { } , -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
         -- TSConstant           { } , -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
         -- TSConstBuiltin       { } , -- Built-in constant values: `nil` in Lua.

@@ -20,5 +20,5 @@ package.loaded['lush_theme.tavern'] = nil
 require('lush')(require('lush_theme.tavern'))
 
 if vim.g.tavern_transparent == true then
-    vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+    vim.api.nvim_set_hl(0, 'Normal', {})
 end
