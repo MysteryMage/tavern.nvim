@@ -15,28 +15,16 @@ local colors = {
     base08 = hsl('#cb6077'),
     base09 = hsl('#c58920'),
     base0A = hsl('#e8e80e'),
-    base0B = hsl('#05CC83').darken(10),
+    base0B = hsl('#05b876'),
     base0C = hsl('#8ab3b5'),
-    base0D = hsl('#6897e7').darken(10).desaturate(20),
+    base0D = hsl('#5a86d3'),
     base0E = hsl('#a34d5f'),
     base0F = hsl('#b0987a'),
 }
 
--- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
--- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
 local theme = lush(function()
     return {
-        -- The following are the Neovim (as of 0.8.0-dev+100-g371dfb174) highlight
-        -- groups, mostly used for styling UI elements.
-        -- Comment them out and add your own properties to override the defaults.
-        -- An empty definition `{}` will clear all styling, leaving elements looking
-        -- like the 'Normal' group.
-        -- To be able to link to a group, it must already be defined, so you may have
-        -- to reorder items as you go.
-        --
-        -- See :h highlight-groups
-        --
         ColorColumn  {  bg = colors.base00.lighten(15) }, -- Columns set with 'colorcolumn'
         -- Conceal      { bg = colors.base00 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
         Cursor       { fg = colors.base05.rotate(180) }, -- Character under the cursor
@@ -68,7 +56,7 @@ local theme = lush(function()
         -- MoreMsg      { }, -- |more-prompt|
         NonText      { fg = colors.base05.darken(30) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal       { bg = colors.base00, fg = colors.base05 }, -- Normal text
-        NormalFloat  { bg = colors.base00, fg = Normal.fg }, -- Normal text in floating windows.
+        NormalFloat  { bg = colors.base00.darken(10), fg = Normal.fg }, -- Normal text in floating windows.
         NormalNC     { Normal }, -- normal text in non-current windows
         Pmenu        {  bg = colors.base00.lighten(10), fg = Normal.fg }, -- Popup menu: Normal item.
         PmenuSel     { bg = CursorLine.bg.lighten(10), gui = 'bold' }, -- Popup menu: Selected item.
@@ -94,14 +82,6 @@ local theme = lush(function()
         Whitespace   { fg = colors.base00.desaturate(25).lighten(25) }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         Winseparator { Normal }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
         WildMenu     { bg = colors.base01, fg = colors.base05 }, -- Current match in 'wildmenu' completion
-
-        -- Common vim syntax groups used for all kinds of code and markup.
-        -- Commented-out groups should chain up to their preferred (*) group
-        -- by default.
-        --
-        -- See :h group-name
-        --
-        -- Uncomment and edit if you want more specific syntax highlighting.
 
         Comment        { fg = colors.base03.desaturate(15), gui = 'italic' }, -- Any comment
 
