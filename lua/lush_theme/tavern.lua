@@ -2,7 +2,7 @@ local lush = require('lush')
 local hsl = lush.hsl
 local colors = {
     -- Shades and Tints
-    base00 = hsl('#2a1f1e'), -- Background
+    base00 = hsl('#1b1413'), -- Background
     base01 = hsl('#41302e'),
     base02 = hsl('#58413f'),
     base03 = hsl('#6f524f'),
