@@ -93,7 +93,7 @@ local theme = lush(function()
         Float          { fg = colors.base09 }, --   A floating point constant: 2.3e10
 
         Identifier     { fg = colors.base0F }, -- (*) Any variable name
-        Function       { fg = colors.base08 }, --   Function name (also: methods for classes)
+        Function       { fg = colors.base0A }, --   Function name (also: methods for classes)
 
         Statement      { fg = colors.base09 }, -- (*) Any statement
         Conditional    { fg = colors.base0E }, --   if, then, else, endif, switch, etc.
