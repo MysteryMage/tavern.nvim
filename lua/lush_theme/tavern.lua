@@ -10,7 +10,6 @@ local colors = {
     base05 = hsl('#cbb8b7'), -- Foreground
     base06 = hsl('#dccfcd'),
     base07 = hsl('#ece5e4'),
-
     -- Colors
     base08 = hsl('#cb6077'),
     base09 = hsl('#c58920'),
@@ -25,101 +24,101 @@ local colors = {
 ---@diagnostic disable: undefined-global
 local theme = lush(function()
     return {
-        ColorColumn  {  bg = colors.base00.lighten(15) }, -- Columns set with 'colorcolumn'
+        ColorColumn { bg = colors.base00.lighten(15) }, -- Columns set with 'colorcolumn'
         -- Conceal      { bg = colors.base00 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-        Cursor       { fg = colors.base05.rotate(180) }, -- Character under the cursor
+        Cursor { fg = colors.base05.rotate(180) },      -- Character under the cursor
         -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
-        CursorColumn { bg = colors.base00.lighten(10) }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorLine   { CursorColumn }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-        Directory    { fg = colors.base0F, gui = 'bold'}, -- Directory names (and other special names in listings)
-        DiffAdd      { bg = colors.base0B, fg = colors.base07 }, -- Diff mode: Added line |diff.txt|
-        DiffChange   { bg = colors.base0E.darken(30), fg = colors.base07 }, -- Diff mode: Changed line |diff.txt|
-        DiffDelete   { bg = colors.base08, fg = colors.base07 }, -- Diff mode: Deleted line |diff.txt|
-        DiffText     { bg = colors.base0D, fg = colors.base00 }, -- Diff mode: Changed text within a changed line |diff.txt|
-        EndOfBuffer  { fg = colors.base05.darken(30) }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
+        CursorColumn { bg = colors.base00.lighten(10) },                  -- Screen-column at the cursor, when 'cursorcolumn' is set.
+        CursorLine { CursorColumn },                                      -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+        Directory { fg = colors.base0F, gui = 'bold' },                   -- Directory names (and other special names in listings)
+        DiffAdd { bg = colors.base0B, fg = colors.base07 },               -- Diff mode: Added line |diff.txt|
+        DiffChange { bg = colors.base0E.darken(30), fg = colors.base07 }, -- Diff mode: Changed line |diff.txt|
+        DiffDelete { bg = colors.base08, fg = colors.base07 },            -- Diff mode: Deleted line |diff.txt|
+        DiffText { bg = colors.base0D, fg = colors.base00 },              -- Diff mode: Changed text within a changed line |diff.txt|
+        EndOfBuffer { fg = colors.base05.darken(30) },                    -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
         -- TermCursor   { }, -- Cursor in a focused terminal
         -- TermCursorNC { }, -- Cursor in an unfocused terminal
-        ErrorMsg     { fg = colors.base0E.saturate(20) }, -- Error messages on the command line
-        VertSplit    { bg = colors.base00, fg = colors.base05 }, -- Column separating vertically split windows
-        Folded       { bg = colors.base03, gf = colors.base05 }, -- Line used for closed folds
-        FoldColumn   { Folded }, -- 'foldcolumn'
-        SignColumn   { bg = colors.base00 }, -- Column where |signs| are displayed
-        IncSearch    { bg = colors.base0A, fg = colors.base00 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-        Substitute   { IncSearch }, -- |:substitute| replacement text highlighting
-        LineNr       { fg = colors.base01.lighten(10) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        CursorLineNr { fg = colors.base09 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-        MatchParen   { bg = colors.base03 }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-        ModeMsg      { bg = colors.base00, fg = colors.base05, gui = 'bold'}, -- 'showmode' message (e.g., "-- INSERT -- ")
+        ErrorMsg { fg = colors.base0E.saturate(20) },                     -- Error messages on the command line
+        VertSplit { bg = colors.base00, fg = colors.base05 },             -- Column separating vertically split windows
+        Folded { bg = colors.base03, gf = colors.base05 },                -- Line used for closed folds
+        FoldColumn { Folded },                                            -- 'foldcolumn'
+        SignColumn { bg = colors.base00 },                                -- Column where |signs| are displayed
+        IncSearch { bg = colors.base0A, fg = colors.base00 },             -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+        Substitute { IncSearch },                                         -- |:substitute| replacement text highlighting
+        LineNr { fg = colors.base01.lighten(10) },                        -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+        CursorLineNr { fg = colors.base09 },                              -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+        MatchParen { bg = colors.base03 },                                -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+        ModeMsg { bg = colors.base00, fg = colors.base05, gui = 'bold' }, -- 'showmode' message (e.g., "-- INSERT -- ")
         -- MsgArea      { }, -- Area for messages and cmdline
         -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         -- MoreMsg      { }, -- |more-prompt|
-        NonText      { fg = colors.base05.darken(30) }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-        Normal       { bg = colors.base00, fg = colors.base05 }, -- Normal text
-        NormalFloat  { bg = colors.base00.darken(10), fg = Normal.fg }, -- Normal text in floating windows.
-        NormalNC     { Normal }, -- normal text in non-current windows
-        Pmenu        {  bg = colors.base00.lighten(10), fg = Normal.fg }, -- Popup menu: Normal item.
-        PmenuSel     { bg = CursorLine.bg.lighten(10), gui = 'bold' }, -- Popup menu: Selected item.
-        PmenuSbar    { bg = colors.base02 }, -- Popup menu: Scrollbar.
-        PmenuThumb   { bg = colors.base05 }, -- Popup menu: Thumb of the scrollbar.
-        Question     { fg = colors.base05, gui = 'italic' }, -- |hit-enter| prompt and yes/no questions
-        QuickFixLine { fg = colors.base0A }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-        Search       { IncSearch }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
-        SpecialKey   { fg = colors.base0E }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
-        SpellBad     { fg = colors.base0E, gui = 'underline italic' }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-        SpellCap     { fg = colors.base0D, gui = 'italic' }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-        SpellLocal   { fg = colors.base0F }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-        SpellRare    { fg = colors.base0C}, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-        StatusLine   { bg = colors.base02 }, -- Status line of current window
-        StatusLineNC { bg = colors.base01}, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-        TabLine      { bg = colors.base01 }, -- Tab pages line, not active tab page label
-        TabLineFill  { bg = colors.base01 }, -- Tab pages line, where there are no labels
-        TabLineSel   { bg = colors.base00, gui = 'bold' }, -- Tab pages line, active tab page label
-        Title        { fg = colors.base05, gui = 'bold' }, -- Titles for output from ":set all", ":autocmd" etc.
-        Visual       { bg = colors.base02.darken(20), gui = 'bold'}, -- Visual mode selection
-        VisualNOS    { bg = colors.base02.darken(30) }, -- Visual mode selection when vim is "Not Owning the Selection".
-        WarningMsg   { fg = colors.base0A, gui = 'bold italic' }, -- Warning messages
-        Whitespace   { fg = colors.base00.desaturate(25).lighten(25) }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-        Winseparator { Normal }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-        WildMenu     { bg = colors.base01, fg = colors.base05 }, -- Current match in 'wildmenu' completion
+        NonText { fg = colors.base05.darken(30) },                     -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+        Normal { bg = colors.base00, fg = colors.base05 },             -- Normal text
+        NormalFloat { bg = colors.base00.darken(10), fg = Normal.fg }, -- Normal text in floating windows.
+        NormalNC { Normal },                                           -- normal text in non-current windows
+        Pmenu { bg = colors.base00.lighten(10), fg = Normal.fg },      -- Popup menu: Normal item.
+        PmenuSel { bg = CursorLine.bg.lighten(10), gui = 'bold' },     -- Popup menu: Selected item.
+        PmenuSbar { bg = colors.base02 },                              -- Popup menu: Scrollbar.
+        PmenuThumb { bg = colors.base05 },                             -- Popup menu: Thumb of the scrollbar.
+        Question { fg = colors.base05, gui = 'italic' },               -- |hit-enter| prompt and yes/no questions
+        QuickFixLine { fg = colors.base0A },                           -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+        Search { IncSearch },                                          -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+        SpecialKey { fg = colors.base0E },                             -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
+        SpellBad { fg = colors.base0E, gui = 'underline italic' },     -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+        SpellCap { fg = colors.base0D, gui = 'italic' },               -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+        SpellLocal { fg = colors.base0F },                             -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+        SpellRare { fg = colors.base0C },                              -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
+        StatusLine { bg = colors.base02 },                             -- Status line of current window
+        StatusLineNC { bg = colors.base01 },                           -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+        TabLine { bg = colors.base01 },                                -- Tab pages line, not active tab page label
+        TabLineFill { bg = colors.base01 },                            -- Tab pages line, where there are no labels
+        TabLineSel { bg = colors.base00, gui = 'bold' },               -- Tab pages line, active tab page label
+        Title { fg = colors.base05, gui = 'bold' },                    -- Titles for output from ":set all", ":autocmd" etc.
+        Visual { bg = colors.base02.darken(20), gui = 'bold' },        -- Visual mode selection
+        VisualNOS { bg = colors.base02.darken(30) },                   -- Visual mode selection when vim is "Not Owning the Selection".
+        WarningMsg { fg = colors.base0A, gui = 'bold italic' },        -- Warning messages
+        Whitespace { fg = colors.base00.desaturate(25).lighten(25) },  -- "nbsp", "space", "tab" and "trail" in 'listchars'
+        Winseparator { Normal },                                       -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+        WildMenu { bg = colors.base01, fg = colors.base05 },           -- Current match in 'wildmenu' completion
 
-        Comment        { fg = colors.base03.desaturate(15), gui = 'italic' }, -- Any comment
+        Comment { fg = colors.base03.desaturate(15), gui = 'italic' }, -- Any comment
 
-        Constant       { fg = colors.base09 }, -- (*) Any constant
-        String         { fg = colors.base0B }, --   A string constant: "this is a string"
-        Character      { fg = colors.base0B }, --   A character constant: 'c', '\n'
-        Number         { fg = colors.base09 }, --   A number constant: 234, 0xff
-        Boolean        { fg = colors.base09 }, --   A boolean constant: TRUE, false
-        Float          { fg = colors.base09 }, --   A floating point constant: 2.3e10
+        Constant { fg = colors.base09 },                               -- (*) Any constant
+        String { fg = colors.base0B },                                 --   A string constant: "this is a string"
+        Character { fg = colors.base0B },                              --   A character constant: 'c', '\n'
+        Number { fg = colors.base09 },                                 --   A number constant: 234, 0xff
+        Boolean { fg = colors.base09 },                                --   A boolean constant: TRUE, false
+        Float { fg = colors.base09 },                                  --   A floating point constant: 2.3e10
 
-        Identifier     { fg = colors.base0F }, -- (*) Any variable name
-        Function       { fg = colors.base0A }, --   Function name (also: methods for classes)
+        Identifier { fg = colors.base0F },                             -- (*) Any variable name
+        Function { fg = colors.base0A },                               --   Function name (also: methods for classes)
 
-        Statement      { fg = colors.base09 }, -- (*) Any statement
-        Conditional    { fg = colors.base0E }, --   if, then, else, endif, switch, etc.
-        Repeat         { fg = colors.base0E }, --   for, do, while, etc.
-        Label          { fg = colors.base0E }, --   case, default, etc.
-        Operator       { fg = colors.base09 }, --   "sizeof", "+", "*", etc.
-        Keyword        { fg = colors.base0E }, --   any other keyword
-        Exception      { fg = colors.base0E }, --   try, catch, throw
+        Statement { fg = colors.base09 },                              -- (*) Any statement
+        Conditional { fg = colors.base0E },                            --   if, then, else, endif, switch, etc.
+        Repeat { fg = colors.base0E },                                 --   for, do, while, etc.
+        Label { fg = colors.base0E },                                  --   case, default, etc.
+        Operator { fg = colors.base09 },                               --   "sizeof", "+", "*", etc.
+        Keyword { fg = colors.base0E },                                --   any other keyword
+        Exception { fg = colors.base0E },                              --   try, catch, throw
 
-        PreProc        { fg = colors.base0F }, -- (*) Generic Preprocessor
-        Include        { fg = colors.base0F }, --   Preprocessor #include
-        Define         { fg = colors.base0F }, --   Preprocessor #define
-        Macro          { fg = colors.base0F }, --   Same as Define
-        PreCondit      { fg = colors.base0F }, --   Preprocessor #if, #else, #endif, etc.
+        PreProc { fg = colors.base0F },                                -- (*) Generic Preprocessor
+        Include { fg = colors.base0F },                                --   Preprocessor #include
+        Define { fg = colors.base0F },                                 --   Preprocessor #define
+        Macro { fg = colors.base0F },                                  --   Same as Define
+        PreCondit { fg = colors.base0F },                              --   Preprocessor #if, #else, #endif, etc.
 
-        Type           { fg = colors.base0D }, -- (*) int, long, char, etc.
-        StorageClass   { fg = colors.base0E }, --   static, register, volatile, etc.
-        Structure      { fg = colors.base0D }, --   struct, union, enum, etc.
-        Typedef        { fg = colors.base0D }, --   A typedef
+        Type { fg = colors.base0D },                                   -- (*) int, long, char, etc.
+        StorageClass { fg = colors.base0E },                           --   static, register, volatile, etc.
+        Structure { fg = colors.base0D },                              --   struct, union, enum, etc.
+        Typedef { fg = colors.base0D },                                --   A typedef
 
-        Special        { fg = colors.base0C }, -- (*) Any special symbol
-        SpecialChar    { fg = colors.base0C }, --   Special character in a constant
-        SpecialComment { fg = colors.base0C }, --   Special things inside a comment (e.g. '\n')
-        Tag            { fg = colors.base09 }, --   You can use CTRL-] on this
-        Delimiter      { fg = colors.base09 }, --   Character that needs attention
-        Debug          { fg = colors.base09 }, --   Debugging statements
+        Special { fg = colors.base0C },                                -- (*) Any special symbol
+        SpecialChar { fg = colors.base0C },                            --   Special character in a constant
+        SpecialComment { fg = colors.base0C },                         --   Special things inside a comment (e.g. '\n')
+        Tag { fg = colors.base09 },                                    --   You can use CTRL-] on this
+        Delimiter { fg = colors.base09 },                              --   Character that needs attention
+        Debug { fg = colors.base09 },                                  --   Debugging statements
 
         -- Underlined     { gui = "underline" }, -- Text that stands out, HTML links
         -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
@@ -141,10 +140,10 @@ local theme = lush(function()
 
         -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
         --
-        DiagnosticError            { ErrorMsg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-        DiagnosticWarn             { fg = colors.base0A } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-        DiagnosticInfo             { fg = colors.base0C } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-        DiagnosticHint             { fg = colors.base0B } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+        DiagnosticError { ErrorMsg },          -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+        DiagnosticWarn { fg = colors.base0A }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+        DiagnosticInfo { fg = colors.base0C }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+        DiagnosticHint { fg = colors.base0B }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
         -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
         -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
         -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -235,9 +234,13 @@ local theme = lush(function()
         -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
 
         -- Gitsigns
-        GitSignsAdd      { bg = colors.base00, fg = colors.base09 },
-        GitSignsChange   { bg = colors.base00, fg = colors.base0A },
-        GitSignsDelete   { bg = colors.base00, fg = colors.base08 },
+        GitSignsAdd { bg = colors.base00, fg = colors.base09 },
+        GitSignsChange { bg = colors.base00, fg = colors.base0A },
+        GitSignsDelete { bg = colors.base00, fg = colors.base08 },
+
+        -- Lazy.nvim
+        LazyProp { bg = colors.base0D, fg = colors.base07 },
+        LazyDimmed { bg = colors.base0E, fg = colors.base07 },
     }
 end)
 
