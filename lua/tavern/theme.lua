@@ -31,7 +31,7 @@ local theme = {
     DiffAdd = { bg = colors.base0B, fg = colors.base07 },
     DiffChange = { bg = color_utils.darken(colors.base0E, 0.3), fg = colors.base07 },
     DiffDelete = { bg = colors.base08, fg = colors.base07 },
-    DiffText = { bg = colors.base0D, fg = colors.base00 },
+    DiffText = { bg = colors.base0D, fg = colors.base07 },
     EndOfBuffer = { fg = color_utils.darken(colors.base05, 0.3) },
     ErrorMsg = { fg = color_utils.saturate(colors.base0E, 0.2) },
     VertSplit = { bg = colors.base00, fg = colors.base05 },
@@ -112,8 +112,8 @@ local theme = {
     GitSignsChange = { bg = colors.base00, fg = colors.base0A },
     GitSignsDelete = { bg = colors.base00, fg = colors.base08 },
     -- Lazy.nvim
-    LazyProp = { bg = colors.base0D, fg = colors.base07 },
-    LazyDimmed = { bg = colors.base0E, fg = colors.base07 },
+    LazyProp = { fg = colors.base0E },
+    LazyDimmed = { fg = color_utils.darken(colors.base04, 0.25) },
 }
 
 function M.get_theme()

@@ -6,20 +6,12 @@
 ![tavern_nvim](https://user-images.githubusercontent.com/36642316/200568220-f87d7c11-3dd8-437b-a32a-b4e778082b7b.png)
 
 ### Installation
-***Important to note this colorscheme is built using [lush.nvim](https://github.com/rktjmp/lush.nvim)***
-***you need to install [lush.nvim](https://github.com/rktjmp/lush.nvim) in order for this colorscheme to work***
 ```lua
 -- Using packer
-use {
-    'MysteryMage/tavern.nvim',
-    requires = 'rktjmp/lush.nvim'
-}
+use 'MysteryMage/tavern.nvim',
 
 -- Using lazy
-{
-    'MysteryMage/tavern.nvim',
-    dependencies = 'rktjmp/lush.nvim'
-}
+'MysteryMage/tavern.nvim',
 
 ```
 
@@ -28,3 +20,6 @@ use {
 -- Somewhere in your config before using the colorscheme
 vim.g.tavern_transparent = true
 ```
+## Thanks
+I would like to thank [catppuccin](https://github.com/catppuccin/nvim)
+and [tokyonight](https://github.com/folke/tokyonight.nvim) from whom I understood how to structue the theme.
