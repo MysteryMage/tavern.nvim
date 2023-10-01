@@ -21,23 +21,6 @@ use 'MysteryMage/tavern.nvim',
 vim.g.tavern_transparent = true
 ```
 
-#1b1413",  # Background
-    "#41302e",
-    "#58413f",
-    "#6f524f",
-    "#bba2a0",
-    "#cbb8b7",  # Foreground
-    "#dccfcd",
-    "#ece5e4",
-    "#cb6077",
-    "#c58920",
-    "#e8e80e",
-    "#05b876",
-    "#8ab3b5",
-    "#5a86d3",
-    "#a34d5f",
-    "#b0987a",
-
 ### Colors
 | Color      | Hex        |
 |------------|------------|
