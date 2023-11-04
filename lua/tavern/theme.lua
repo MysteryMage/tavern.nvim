@@ -12,22 +12,14 @@ local colors = {
     base06 = '#dccfcd',
     base07 = '#ece5e4',
     -- Colors
-    base08 = '#CC8051',
+    base08 = '#D8814B',
     base09 = '#C79C0B',
-    base0A = '#D1C624',
-    base0B = '#53B835',
+    base0A = '#D0472F',
+    base0B = '#688C3B',
     base0C = '#AEB848',
-    base0D = '#6683D6',
+    base0D = '#BB3075',
     base0E = '#A37B41',
     base0F = '#B3A532',
-    -- base08 = '#cb6077',
-    -- base09 = '#c58920',
-    -- base0A = '#e8e80e',
-    -- base0B = '#05b876',
-    -- base0C = '#8ab3b5',
-    -- base0D = '#5a86d3',
-    -- base0E = '#a34d5f',
-    -- base0F = '#b0987a',
 }
 
 local theme = {
