@@ -23,9 +23,9 @@ local colors = {
 }
 
 local theme = {
-    ColorColumn = { bg = color_utils.lighten(colors.base00, 0.15) },
+    ColorColumn = { bg = color_utils.lighten(colors.base00, 0.10) },
     Cursor = { fg = color_utils.invert_color(colors.base05), bg = colors.base05 },
-    CursorColumn = { bg = color_utils.lighten(colors.base00, 0.15) },
+    CursorColumn = { bg = color_utils.lighten(colors.base00, 0.10) },
     CursorLine = { link = 'CursorColumn' },
     Directory = { fg = colors.base08, style = { 'bold' } },
     DiffAdd = { bg = color_utils.darken(colors.base0C, 0.3), fg = colors.base07 },
@@ -72,7 +72,7 @@ local theme = {
     Whitespace = { fg = color_utils.lighten(color_utils.desaturate(colors.base00, 0.25), 0.25) },
     Winseparator = { link = 'Normal' },
     WildMenu = { bg = colors.base01, fg = colors.base05 },
-    Comment = { fg = color_utils.desaturate(colors.base03, 0.15), style = { 'italic' } },
+    Comment = { fg = color_utils.lighten(color_utils.desaturate(colors.base03, 0.15), 0.10), style = { 'italic' } },
     Constant = { fg = colors.base0A },
     String = { fg = colors.base0C },
     Character = { fg = colors.base0C },
